@@ -1,0 +1,34 @@
+.modal__image {
+  width: 100%;
+}
+
+.modal_type_previewGarmet {
+  max-width: 498px;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+}
+
+.modal__close-btn_type-preview-1 {
+  background-image: url("../assets/imgFormCloseWhite.svg");
+}
+
+.modal__preview-caption {
+  padding: 20px 0 12px 32px;
+  font-size: 20px;
+  font-weight: 700;
+  font-style: bold;
+  line-height: 24px;
+}
+
+.modal__preview-weather {
+  padding: 0 0 32px 32px;
+  font-size: 20px;
+  font-weight: 700;
+  font-style: bold;
+  line-height: 24px;
+}
+
+.modal__close-btn_type-preview-1 {
+  opacity: 1;
+}

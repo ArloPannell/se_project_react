@@ -1,0 +1,60 @@
+.header {
+  background-color: #f3f3f3;
+  box-sizing: border-box;
+  max-width: 1360px;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.header__date-location {
+  margin: 0;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-bottom: 5px;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.header__btn-AddGarmet {
+  padding: 0 20px 8px 0;
+  border: 0px;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.header__btn-AddGarmet:hover {
+  cursor: pointer;
+}
+
+.header__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: baseline;
+  align-items: end;
+}
+
+.header__username {
+  margin: 0;
+  padding: 0 12px 10px 0;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.header__avatar {
+  height: 40px;
+  width: 40px;
+}
+
+.header__logo {
+  height: 40px;
+  width: 89px;
+}

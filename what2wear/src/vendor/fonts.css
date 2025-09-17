@@ -1,0 +1,31 @@
+/* Here's a breakdown of the typical font weight scale: 
+100: Thin
+200: Extra Light (Ultra Light)
+300: Light
+400: Normal
+500: Medium
+600: Semi Bold (Demi Bold)
+700: Bold
+800: Extra Bold (Ultra Bold)
+900: Black (Heavy) */
+
+@font-face {
+  font-family: "Cabinet Grotesk";
+  font-weight: 400;
+  font-style: normal;
+  src: url(./fonts/CabinetGrotesk-Regular.otf) format ("opentype");
+}
+
+@font-face {
+  font-family: "Cabinet Grotesk";
+  font-weight: 700;
+  font-style: bold;
+  src: url(./fonts/CabinetGrotesk-Bold.otf) format ("opentype");
+}
+
+@font-face {
+  font-family: "Cabinet Grotesk";
+  src: url(./fonts/CabinetGrotesk-Medium.otf) format("opentype");
+  font-weight: 500;
+  font-style: medium;
+}

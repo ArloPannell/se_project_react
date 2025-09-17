@@ -1,0 +1,154 @@
+.modal {
+  position: relative;
+  background-color: #00000080;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.modal__type {
+  max-width: 496px;
+  border: 1px;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 20px;
+  border-color: #0000004d;
+  border: 1px;
+  background-color: #fff;
+  padding: 28px 28px 36px 28px;
+  position: relative;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.modal__title {
+  margin: 0;
+  color: #000000;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  font-style: bold;
+}
+
+.modal__label {
+  margin: 0;
+  padding: 24px 0 8px 0;
+  font-size: 16px;
+  font-weight: 700;
+  font-style: bold;
+  line-height: 20px;
+  color: #000;
+  display: block;
+}
+
+.modal__input {
+  margin: 0;
+  height: 24px;
+  width: 100%;
+  padding: 0 0 4px 0;
+  display: block;
+  box-sizing: border-box;
+  border-style: none none solid none;
+}
+
+.modal__input:hover {
+  cursor: pointer;
+}
+
+.modal__input::placeholder {
+  opacity: 50%;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  font-style: bold;
+}
+
+.modal__legend {
+  margin: 0;
+  padding: 24px 0 12px 0;
+  font-size: 16px;
+  font-weight: 700;
+  font-style: bold;
+  line-height: 20px;
+}
+
+.modal__fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.modal__fieldset-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.modal__label_type-fieldset {
+  padding: 0 0 0 8px;
+}
+
+.modal__radio-input {
+  padding: 0 8px 0 0;
+}
+
+.modal__radio-input:hover {
+  cursor: pointer;
+}
+
+.modal__close-btn {
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  width: 20px;
+  height: 20px;
+  background-image: url("../assets/imgFormCloseBlack.svg");
+  opacity: 30%;
+  background-size: cover;
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+}
+
+.modal__close-btn:hover {
+  opacity: 100;
+  cursor: pointer;
+}
+
+.modal__submit-btn {
+  margin: 32px 0 0 0;
+  max-width: 156px;
+  border: 0;
+  border-radius: 4px;
+  background-color: #000;
+  padding: 8px 16px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  font-style: bold;
+  line-height: 20px;
+}
+
+.modal__submit-btn:hover {
+  opacity: 60%;
+  cursor: pointer;
+}
+
+.modal__submit-btn_disabled {
+  opacity: 30%;
+}
+
+.modal__submit-btn_disabled:hover {
+  opacity: 50%;
+}
