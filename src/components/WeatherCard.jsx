@@ -1,4 +1,4 @@
-import "../blocks/WeatherCard.css";
+import "../blocks/weatherCard.css";
 import { getImage } from "../utils/functions.js";
 
 export default function WeatherCard({ weatherData }) {
