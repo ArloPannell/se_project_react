@@ -67,6 +67,7 @@ function App() {
             buttonText="Add garmet"
             title="New garmet"
             name="newGarmet"
+            useEffect={useEffect}
           >
             <NewGarmetForm />
           </ModalWithForm>
@@ -78,6 +79,7 @@ function App() {
             card={selectedCard}
             closeActiveModal={closeActiveModal}
             name="previewGarmet"
+            useEffect={useEffect}
           />
         )}
       </div>

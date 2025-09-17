@@ -1,8 +1,22 @@
 import "../blocks/itemModal.css";
 
-export default function ItemModal({ card, closeActiveModal, name }) {
+export default function ItemModal({ card, closeActiveModal, name, useEffect }) {
+  useEffect(() => {
+    const handleGlobalEscape = (event) => {
+      if (event.key === "Escape") {
+        closeActiveModal();
+      }
+    };
+    // Add event listener when the component mounts
+    document.addEventListener("keydown", handleGlobalEscape);
+    // Clean up the event listener when the component unmounts
+    return () => {
+      document.removeEventListener("keydown", handleGlobalEscape);
+    };
+  }, []);
+
   return (
-    <div className="modal">
+    <div className="modal" onClick={closeActiveModal}>
       <div className={`modal__type modal_type_${name}`}>
         <button
           onClick={closeActiveModal}

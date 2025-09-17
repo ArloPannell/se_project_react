@@ -2,7 +2,6 @@ import "../blocks/weatherCard.css";
 import { getImage } from "../utils/functions.js";
 
 export default function WeatherCard({ weatherData }) {
-  console.log(weatherData);
   return (
     <>
       <div className="weather">
