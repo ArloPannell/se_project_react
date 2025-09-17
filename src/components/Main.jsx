@@ -11,7 +11,7 @@ export default function Main({ weatherData, onCardClick }) {
         <WeatherCard weatherData={weatherData} />
         <section className="itemCards">
           <p className="itemCards__header">
-            Today is 75 &deg; F / You may want to wear:
+            Today is {weatherData.weatherTemp} &deg; F / You may want to wear:
           </p>
           <ul className="itemCards__list">
             {defaultClothingItems
