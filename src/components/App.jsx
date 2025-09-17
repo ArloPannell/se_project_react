@@ -7,6 +7,10 @@ import {
   parseWeatherData,
   formatWeatherData,
 } from "../utils/functions.js";
+import {
+  defaultClothingItems as itemDefaults,
+  weatherDefaults,
+} from "../utils/constants.js";
 import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
@@ -15,12 +19,8 @@ import NewGarmetForm from "./NewGarmetForm";
 import ItemModal from "./ItemModal";
 
 function App() {
-  const [weatherData, setWeatherData] = useState({
-    weatherTemp: 999,
-    imgWeather: "nightRain",
-    weatherType: "cold",
-    location: "Mexico",
-  });
+  const [defaultItems, setDefaultItems] = useState(itemDefaults);
+  const [weatherData, setWeatherData] = useState(weatherDefaults);
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
 
@@ -52,7 +52,11 @@ function App() {
       <div className="page">
         <div className="page__content">
           <Header handleAddGarmet={handleAddGarmet} weatherData={weatherData} />
-          <Main weatherData={weatherData} onCardClick={handleCardClick} />
+          <Main
+            weatherData={weatherData}
+            onCardClick={handleCardClick}
+            defaultItems={defaultItems}
+          />
           <Footer />
         </div>
 

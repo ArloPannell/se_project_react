@@ -66,6 +66,7 @@ function formatWeatherData(initData) {
   formattedData.weatherType = setWeatherType(initData.temp);
   formattedData.weatherTemp = initData.temp;
   formattedData.location = initData.location;
+  formattedData.description = initData.weatherDescription;
 
   return formattedData;
 }

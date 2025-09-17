@@ -69,6 +69,14 @@ const wtwImages = [
   },
 ];
 
+const weatherDefaults = {
+  weatherTemp: 999,
+  imgWeather: "nightRain",
+  weatherType: "cold",
+  location: "Mexico",
+  description: "Fluffy",
+};
+
 const defaultClothingItems = [
   {
     _id: 1,
@@ -133,7 +141,7 @@ const defaultClothingItems = [
   {
     _id: 11,
     name: "Shorts",
-    weather: "Hot",
+    weather: "hot",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Shorts.png?etag=d728c496643f610de8d8fea92dd915ba",
   },
   {
@@ -225,4 +233,4 @@ const weatherIDMap = [
   { id: 804, type: "Cloudy" },
 ];
 
-export { wtwImages, defaultClothingItems, weatherIDMap };
+export { wtwImages, defaultClothingItems, weatherIDMap, weatherDefaults };

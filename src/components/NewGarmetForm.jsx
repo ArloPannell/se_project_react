@@ -27,6 +27,7 @@ export default function NewGarmetForm() {
           <input
             type="radio"
             className="modal__radio-input"
+            value="hot"
             id="hot"
             name="weather"
           />
@@ -41,6 +42,7 @@ export default function NewGarmetForm() {
           <input
             type="radio"
             className="modal__radio-input"
+            value="warm"
             id="warm"
             name="weather"
           />
@@ -55,6 +57,7 @@ export default function NewGarmetForm() {
           <input
             type="radio"
             className="modal__radio-input"
+            value="cold"
             id="cold"
             name="weather"
           />

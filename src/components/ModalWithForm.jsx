@@ -11,7 +11,11 @@ export default function ModalWithForm({
   return (
     <div className="modal modal_is-opened">
       <div className={`modal__type modal_type_${name}`}>
-        <form className={`modal__form modal__form_${name}`} noValidate>
+        <form
+          className={`modal__form modal__form_${name}`}
+          name={name}
+          noValidate
+        >
           <button
             onClick={closeActiveModal}
             className="modal__close-btn"
