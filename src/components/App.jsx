@@ -19,7 +19,7 @@ import NewGarmetForm from "./NewGarmetForm";
 import ItemModal from "./ItemModal";
 
 function App() {
-  const [defaultItems, setDefaultItems] = useState(itemDefaults);
+  const [clothingItems, setClothingItems] = useState(itemDefaults);
   const [weatherData, setWeatherData] = useState(weatherDefaults);
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
@@ -31,7 +31,9 @@ function App() {
         const finalData = formatWeatherData(initData);
         setWeatherData(finalData);
       })
-      .catch(console.error);
+      .catch((res) => {
+        console.error("Failed to fetch weather data: ", res.error);
+      });
   }, []);
 
   const handleCardClick = (card) => {
@@ -48,42 +50,37 @@ function App() {
   };
 
   return (
-    <>
-      <div className="page">
-        <div className="page__content">
-          <Header handleAddGarmet={handleAddGarmet} weatherData={weatherData} />
-          <Main
-            weatherData={weatherData}
-            onCardClick={handleCardClick}
-            defaultItems={defaultItems}
-          />
-          <Footer />
-        </div>
-
-        {activeModal === "add" && (
-          <ModalWithForm
-            activeModal={activeModal}
-            closeActiveModal={closeActiveModal}
-            buttonText="Add garmet"
-            title="New garmet"
-            name="newGarmet"
-            useEffect={useEffect}
-          >
-            <NewGarmetForm />
-          </ModalWithForm>
-        )}
-
-        {activeModal === "preview" && (
-          <ItemModal
-            activeModal={activeModal}
-            card={selectedCard}
-            closeActiveModal={closeActiveModal}
-            name="previewGarmet"
-            useEffect={useEffect}
-          />
-        )}
+    <div className="page">
+      <div className="page__content">
+        <Header handleAddGarmet={handleAddGarmet} weatherData={weatherData} />
+        <Main
+          weatherData={weatherData}
+          onCardClick={handleCardClick}
+          clothingItems={clothingItems}
+        />
+        <Footer />
       </div>
-    </>
+
+      {activeModal === "add" && (
+        <ModalWithForm
+          closeActiveModal={closeActiveModal}
+          buttonText="Add garmet"
+          title="New garmet"
+          name="newGarmet"
+        >
+          <NewGarmetForm />
+        </ModalWithForm>
+      )}
+
+      {activeModal === "preview" && (
+        <ItemModal
+          card={selectedCard}
+          closeActiveModal={closeActiveModal}
+          name="previewGarmet"
+          useEffect={useEffect}
+        />
+      )}
+    </div>
   );
 }
 

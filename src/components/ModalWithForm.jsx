@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import "../blocks/modalWithForm.css";
 
 export default function ModalWithForm({
@@ -6,24 +7,31 @@ export default function ModalWithForm({
   buttonText,
   title,
   name,
-  useEffect,
 }) {
   useEffect(() => {
-    const handleGlobalEscape = (event) => {
+    const handleEscape = (event) => {
       if (event.key === "Escape") {
         closeActiveModal();
       }
     };
     // Add event listener when the component mounts
-    document.addEventListener("keydown", handleGlobalEscape);
+    document.addEventListener("keydown", handleEscape);
     // Clean up the event listener when the component unmounts
     return () => {
-      document.removeEventListener("keydown", handleGlobalEscape);
+      document.removeEventListener("keydown", handleEscape);
     };
   }, []);
+
+  const handleModalContentClick = (event) => {
+    event.stopPropagation();
+  };
+
   return (
     <div className="modal" onClick={closeActiveModal}>
-      <div className={`modal__type modal_type_${name}`}>
+      <div
+        className={`modal__type modal_type_${name}`}
+        onClick={handleModalContentClick}
+      >
         <form
           className={`modal__form modal__form_${name}`}
           name={name}

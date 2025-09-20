@@ -2,7 +2,7 @@ import "../blocks/main.css";
 import ItemCard from "./ItemCard.jsx";
 import WeatherCard from "./WeatherCard.jsx";
 
-export default function Main({ weatherData, onCardClick, defaultItems }) {
+export default function Main({ weatherData, onCardClick, clothingItems }) {
   return (
     <main>
       <WeatherCard weatherData={weatherData} />
@@ -11,7 +11,7 @@ export default function Main({ weatherData, onCardClick, defaultItems }) {
           Today is {weatherData.weatherTemp} &deg; F / You may want to wear:
         </p>
         <ul className="itemCards__list">
-          {defaultItems
+          {clothingItems
             .filter((item) => {
               return item.weather === weatherData.weatherType;
             })

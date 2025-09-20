@@ -51,9 +51,9 @@ function setHeaderWeather(parsedWeatherData) {
 }
 
 function setWeatherType(temp) {
-  if (temp >= 86) {
+  if (temp >= 70) {
     return "hot";
-  } else if (temp >= 66) {
+  } else if (temp >= 60) {
     return "warm";
   } else {
     return "cold";
