@@ -13,7 +13,7 @@
   margin: 0;
   margin-right: auto;
   padding-left: 24px;
-  padding-bottom: 5px;
+  padding-bottom: 9px;
   font-weight: 700;
   font-style: bold;
   font-size: 20px;
@@ -21,12 +21,17 @@
 }
 
 .header__btn-AddGarmet {
-  padding: 0 20px 8px 0;
+  padding: 0 20px 7px 0;
   border: 0px;
   font-weight: 700;
   font-style: bold;
   font-size: 20px;
   line-height: 24px;
+}
+
+.header__link {
+  text-decoration: none;
+  color: #000;
 }
 
 .header__btn-AddGarmet:hover {

@@ -13,7 +13,14 @@
   background-image: url("../assets/imgFormCloseWhite.svg");
 }
 
+.modal__preview-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .modal__preview-caption {
+  margin: 0;
   padding: 20px 0 12px 32px;
   font-size: 20px;
   font-weight: 700;
@@ -22,6 +29,7 @@
 }
 
 .modal__preview-weather {
+  margin: 0;
   padding: 0 0 32px 32px;
   font-size: 20px;
   font-weight: 700;
@@ -31,4 +39,18 @@
 
 .modal__close-btn_type-preview-1 {
   opacity: 1;
+}
+
+.modal__preview_btn-wrapper {
+  padding: 20px 32px 0 0;
+}
+
+.modal__preview-footer_delete-btn {
+  color: #ff4d00;
+  border: 0;
+  background-color: transparent;
+}
+
+.modal__preview-footer_delete-btn:hover {
+  cursor: pointer;
 }

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import useForm from "../hooks/useForm.js";
 import "../blocks/modalWithForm.css";
 
 export default function ModalWithForm({
@@ -7,6 +8,7 @@ export default function ModalWithForm({
   buttonText,
   title,
   name,
+  handleFormSubmit,
 }) {
   useEffect(() => {
     const handleEscape = (event) => {
@@ -36,6 +38,7 @@ export default function ModalWithForm({
           className={`modal__form modal__form_${name}`}
           name={name}
           noValidate
+          onSubmit={handleFormSubmit}
         >
           <button
             onClick={closeActiveModal}

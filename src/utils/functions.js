@@ -1,5 +1,10 @@
 import { wtwImages, weatherIDMap } from "./constants.js";
 import { weatherAPI } from "./weather.js";
+import { v4 as idValue } from "https://jspm.dev/uuid";
+
+function getUniqueId() {
+  return idValue();
+}
 
 function getDate() {
   const dateString = new Date().toLocaleString("default", {
@@ -26,7 +31,7 @@ function useAPI() {
 
 function parseWeatherData(weatherData) {
   const parsedWeatherData = {};
-  parsedWeatherData.temp = Math.round(weatherData.main.temp);
+  parsedWeatherData.temp = weatherData.main.temp;
   parsedWeatherData.location = weatherData.name;
   parsedWeatherData.weatherIDnumber = weatherData.weather[0].id;
   parsedWeatherData.weatherText = weatherData.weather[0].main;
@@ -64,11 +69,21 @@ function formatWeatherData(initData) {
   const formattedData = {};
   formattedData.imgWeather = setHeaderWeather(initData);
   formattedData.weatherType = setWeatherType(initData.temp);
-  formattedData.weatherTemp = initData.temp;
+  formattedData.weatherTemp = [
+    Math.round(initData.temp),
+    Math.round(((initData.temp - 32) * 5) / 9),
+  ];
   formattedData.location = initData.location;
   formattedData.description = initData.weatherDescription;
 
   return formattedData;
 }
 
-export { getDate, getImage, formatWeatherData, useAPI, parseWeatherData };
+export {
+  getDate,
+  getImage,
+  formatWeatherData,
+  useAPI,
+  parseWeatherData,
+  getUniqueId,
+};

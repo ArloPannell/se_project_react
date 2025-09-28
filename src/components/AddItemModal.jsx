@@ -1,6 +1,24 @@
-export default function NewGarmetForm() {
+import useForm from "../hooks/useForm.js";
+import ModalWithForm from "./ModalWithForm";
+
+export default function AddItemModal({ closeActiveModal, onAddGarmet }) {
+  const defaultValues = { name: "", link: "", weather: "" };
+  const { values, handleChange, handleReset } = useForm(defaultValues);
+
+  const handleFormSubmit = (evt) => {
+    evt.preventDefault();
+    onAddGarmet(values);
+    handleReset(defaultValues);
+  };
+
   return (
-    <>
+    <ModalWithForm
+      closeActiveModal={closeActiveModal}
+      buttonText="Add garmet"
+      title="New garmet"
+      name="newGarmet"
+      handleFormSubmit={handleFormSubmit}
+    >
       <label htmlFor="name-input" className="modal__label">
         Name
       </label>
@@ -8,7 +26,10 @@ export default function NewGarmetForm() {
         type="text"
         className="modal__input"
         id="name-input"
+        name="name"
         placeholder="Name"
+        value={values.name}
+        onChange={handleChange}
       />
 
       <label htmlFor="imageURL" className="modal__label">
@@ -17,8 +38,11 @@ export default function NewGarmetForm() {
       <input
         type="url"
         className="modal__input"
+        name="link"
         id="imageURL"
         placeholder="Image URL"
+        value={values.link}
+        onChange={handleChange}
       />
 
       <fieldset className="modal__fieldset modal__fieldset_type-radio-buttons">
@@ -30,6 +54,8 @@ export default function NewGarmetForm() {
             value="hot"
             id="hot"
             name="weather"
+            checked={values.weather === "hot"}
+            onChange={handleChange}
           />
           <label
             htmlFor="hot"
@@ -45,6 +71,8 @@ export default function NewGarmetForm() {
             value="warm"
             id="warm"
             name="weather"
+            checked={values.weather === "warm"}
+            onChange={handleChange}
           />
           <label
             htmlFor="warm"
@@ -60,6 +88,8 @@ export default function NewGarmetForm() {
             value="cold"
             id="cold"
             name="weather"
+            checked={values.weather === "cold"}
+            onChange={handleChange}
           />
           <label
             htmlFor="cold"
@@ -69,6 +99,6 @@ export default function NewGarmetForm() {
           </label>
         </div>
       </fieldset>
-    </>
+    </ModalWithForm>
   );
 }

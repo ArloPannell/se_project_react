@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import "../blocks/itemModal.css";
+import "../blocks/deleteItemWarning.css";
 
-export default function ItemModal({
+export default function DeleteItemWarning({
   card,
   closeActiveModal,
-  onDeleteClick,
+  onYesDelete,
   name,
 }) {
   useEffect(() => {
@@ -28,31 +28,35 @@ export default function ItemModal({
   return (
     <div className="modal" onClick={closeActiveModal}>
       <div
-        className={`modal__type modal_type_${name}`}
+        className={`modal__type modal__type_${name}`}
         onClick={handleModalContentClick}
       >
         <button
           onClick={closeActiveModal}
-          className="modal__close-btn modal__close-btn_type-preview-1"
+          className="modal__close-btn modal__close-btn_type-deleteWarning"
           type="button"
           aria-label="Close Button"
         ></button>
-        <img src={card.link} alt={card.name} className="modal__image" />
-        <div className="modal__preview-footer">
-          <div className="modal__preview-footer_item-details">
-            <h2 className="modal__preview-caption">{card.name}</h2>
-            <p className="modal__preview-weather">Weather: {card.weather}</p>
-          </div>
-          <div className="modal__preview_btn-wrapper">
-            <button
-              type="button"
-              className="modal__preview-footer_delete-btn"
-              onClick={onDeleteClick}
-            >
-              Delete Item
-            </button>
-          </div>
-        </div>
+        <span className="modal__warning-text">
+          Are you sure you want to delete this item?
+        </span>
+        <span className="modal__warning-text">
+          This action is irreversible.
+        </span>
+        <button
+          type="button"
+          className="modal__deleteItem-btn"
+          onClick={onYesDelete}
+        >
+          Yes, delete Item
+        </button>
+        <button
+          type="button"
+          className="modal__cancel-btn"
+          onClick={closeActiveModal}
+        >
+          Cancel
+        </button>
       </div>
     </div>
   );

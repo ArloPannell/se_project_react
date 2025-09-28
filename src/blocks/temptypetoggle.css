@@ -1,0 +1,80 @@
+.toggle {
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 700;
+  font-style: bold;
+  padding: 0 20px 6px 0;
+}
+
+.toggle__switch {
+  height: 26px;
+  width: 56px;
+  z-index: 0;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #7e7e7e;
+  border-radius: 20px;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.toggle__switch:hover {
+  border-color: #000;
+}
+
+.toggle__checkbox {
+  opacity: 0;
+}
+
+.toggle__circle {
+  z-index: 3;
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  height: 30px;
+  width: 30px;
+  background-color: #000;
+  border-radius: 50%;
+  transition: all 500ms;
+  overflow: visible;
+}
+
+.toggle__checkbox:checked ~ .toggle__circle {
+  left: 28px;
+}
+
+.toggle__left {
+  position: absolute;
+  margin: 0;
+  padding: 2px 0 0 0;
+  color: #000;
+  z-index: 3;
+  left: 9px;
+}
+.toggle__left:hover {
+  left: 11px;
+}
+
+.toggle__left-F {
+  color: #fff;
+}
+
+.toggle__right {
+  position: absolute;
+  margin: 0;
+  padding: 2px 0 0 0;
+  z-index: 3;
+  color: #000;
+  right: 9px;
+}
+
+.toggle__right:hover {
+  right: 11px;
+}
+
+.toggle__right-C {
+  color: #fff;
+}

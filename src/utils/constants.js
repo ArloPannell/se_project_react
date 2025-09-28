@@ -71,6 +71,7 @@ const wtwImages = [
 
 const weatherDefaults = {
   weatherTemp: 999,
+  tempType: "F",
   imgWeather: "nightRain",
   weatherType: "cold",
   location: "Mexico",
