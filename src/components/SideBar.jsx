@@ -9,7 +9,7 @@ export default function SideBar() {
         src={getImage("headerAvatar")}
         alt="User Avatar"
       />
-      <div className="sidebar__user-name">UserName</div>
+      <div className="sidebar__user-name">Alan Turing</div>
     </div>
   );
 }

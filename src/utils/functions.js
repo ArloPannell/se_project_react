@@ -16,7 +16,7 @@ function getDate() {
 
 function getImage(imgName) {
   return wtwImages.find((item) => {
-    return item.name == imgName;
+    return item.name === imgName;
   }).image;
 }
 

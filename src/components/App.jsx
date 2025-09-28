@@ -62,7 +62,7 @@ function App() {
     setSelectedCard(card);
   };
 
-  const handleAddGarmet = () => {
+  const handleAddGarment = () => {
     setActiveModal("add");
   };
 
@@ -74,22 +74,32 @@ function App() {
     setActiveModal("");
   };
 
-  const addGarmet = (formData) => {
+  const addGarment = (formData) => {
     const newID = getUniqueId();
-    const garmetData = { _id: getUniqueId(), ...formData };
-    setClothingItems([garmetData, ...clothingItems]);
-    postItem(garmetData);
-    closeActiveModal();
+    const garmentData = { _id: getUniqueId(), ...formData };
+    postItem(garmentData)
+      .then((garmentData) => {
+        setClothingItems([garmentData, ...clothingItems]);
+        closeActiveModal();
+      })
+      .catch((res) => {
+        console.error(console.error("Failed to post new garment: ", res.error));
+      });
   };
 
-  const deleteGarmet = () => {
-    setClothingItems(
-      clothingItems.filter((item) => {
-        return item._id != selectedCard._id;
-      })
-    );
-    deleteItem(selectedCard._id);
-    closeActiveModal();
+  const deleteGarment = () => {
+    deleteItem(selectedCard._id)
+      .then(
+        setClothingItems(
+          clothingItems.filter((item) => {
+            return item._id != selectedCard._id;
+          })
+        ),
+        closeActiveModal()
+      )
+      .catch((res) => {
+        console.error(console.error("Failed to delete garment: ", res.error));
+      });
   };
 
   return (
@@ -98,7 +108,10 @@ function App() {
     >
       <div className="page">
         <div className="page__content">
-          <Header handleAddGarmet={handleAddGarmet} weatherData={weatherData} />
+          <Header
+            handleAddGarment={handleAddGarment}
+            weatherData={weatherData}
+          />
 
           <Routes>
             <Route
@@ -117,7 +130,7 @@ function App() {
                 <Profile
                   clothingItems={clothingItems}
                   onCardClick={handleCardClick}
-                  onAddClick={handleAddGarmet}
+                  onAddClick={handleAddGarment}
                 />
               }
             />
@@ -128,7 +141,7 @@ function App() {
         {activeModal === "add" && (
           <AddItemModal
             closeActiveModal={closeActiveModal}
-            onAddGarmet={addGarmet}
+            onAddGarment={addGarment}
           />
         )}
 
@@ -137,7 +150,7 @@ function App() {
             card={selectedCard}
             closeActiveModal={closeActiveModal}
             onDeleteClick={handleDeleteWarning}
-            name="previewGarmet"
+            name="previewGarment"
           />
         )}
 
@@ -145,7 +158,7 @@ function App() {
           <DeleteItemWarning
             card={selectedCard}
             closeActiveModal={closeActiveModal}
-            onYesDelete={deleteGarmet}
+            onYesDelete={deleteGarment}
             name="deleteWarning"
           />
         )}

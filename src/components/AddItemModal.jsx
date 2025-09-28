@@ -1,22 +1,22 @@
 import useForm from "../hooks/useForm.js";
 import ModalWithForm from "./ModalWithForm";
 
-export default function AddItemModal({ closeActiveModal, onAddGarmet }) {
+export default function AddItemModal({ closeActiveModal, onAddGarment }) {
   const defaultValues = { name: "", link: "", weather: "" };
   const { values, handleChange, handleReset } = useForm(defaultValues);
 
   const handleFormSubmit = (evt) => {
     evt.preventDefault();
-    onAddGarmet(values);
+    onAddGarment(values);
     handleReset(defaultValues);
   };
 
   return (
     <ModalWithForm
       closeActiveModal={closeActiveModal}
-      buttonText="Add garmet"
-      title="New garmet"
-      name="newGarmet"
+      buttonText="Add garment"
+      title="New garment"
+      name="newgarment"
       handleFormSubmit={handleFormSubmit}
     >
       <label htmlFor="name-input" className="modal__label">

@@ -25,12 +25,6 @@
       "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Coat.png?etag=298717ed89d5e40b1954a1831ae0bdd4"
     },
     {
-      "_id": 4,
-      "name": "Dress",
-      "weather": "hot",
-      "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Dress.png?etag=1f9cd32a311ab139cab43494883720bf"
-    },
-    {
       "_id": 5,
       "name": "Hoodie",
       "weather": "cold",
@@ -67,24 +61,6 @@
       "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Scarf.png?etag=74efbee93810c926b5507e862c6cb76c"
     },
     {
-      "_id": 11,
-      "name": "Shorts",
-      "weather": "Hot",
-      "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Shorts.png?etag=d728c496643f610de8d8fea92dd915ba"
-    },
-    {
-      "_id": 12,
-      "name": "Skirt",
-      "weather": "hot",
-      "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Skirt.png?etag=27a6bea7e1b63218820d615876fa31d1"
-    },
-    {
-      "_id": 13,
-      "name": "Sneakers",
-      "weather": "warm",
-      "link": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Sneakers.png?etag=3efeec41c1c78b8afe26859ca7fa7b6f"
-    },
-    {
       "_id": 14,
       "name": "Sunglasses",
       "weather": "hot",
@@ -118,6 +94,18 @@
       "_id": "2d1ce65f-8c9c-43b9-a15d-0fe3c6a64898",
       "name": "Error Shirt",
       "link": "https://i.etsystatic.com/22448275/r/il/d85ff3/3544352187/il_794xN.3544352187_mz2e.jpg",
+      "weather": "hot"
+    },
+    {
+      "_id": "75ab9824-ab31-4217-bcf5-e37368eab770",
+      "name": "Work Shorts",
+      "link": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQXMmSdvIuDZB94USwkWXJQSr6jZknn5gr_9PybqAoTUetoFbwL_RxcZPRAJIQZLvORsfGVA9Ys11KFeD4ZQDVMDH76GYmYChYITdzSxZxqoPtMo2keHqVi",
+      "weather": "hot"
+    },
+    {
+      "_id": "352ef346-d11f-4aba-8431-16d52f874d42",
+      "name": "Swimsuit",
+      "link": "https://m.media-amazon.com/images/I/712owIHqc-L._UY1000_.jpg",
       "weather": "hot"
     }
   ]

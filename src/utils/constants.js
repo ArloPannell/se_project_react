@@ -4,6 +4,10 @@ const wtwImages = [
     image: new URL("../assets/imgWtwLogo.svg", import.meta.url).href,
   },
   {
+    name: "AlanTuring",
+    image: new URL("../assets/Alan-Turing.png", import.meta.url).href,
+  },
+  {
     name: "headerAvatar",
     image: new URL("../assets/imgHeaderAvatar.svg", import.meta.url).href,
   },
@@ -70,7 +74,7 @@ const wtwImages = [
 ];
 
 const weatherDefaults = {
-  weatherTemp: 999,
+  weatherTemp: [999, 999],
   tempType: "F",
   imgWeather: "nightRain",
   weatherType: "cold",

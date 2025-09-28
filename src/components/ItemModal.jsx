@@ -28,7 +28,7 @@ export default function ItemModal({
   return (
     <div className="modal" onClick={closeActiveModal}>
       <div
-        className={`modal__type modal_type_${name}`}
+        className={`modal__type modal__type_${name}`}
         onClick={handleModalContentClick}
       >
         <button

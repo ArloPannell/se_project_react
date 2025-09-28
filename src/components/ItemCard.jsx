@@ -6,16 +6,14 @@ export default function ItemCard({ item, onCardClick }) {
   };
 
   return (
-    <>
-      <li className="itemCard">
-        <h1 className="itemCard__name">{item.name}</h1>
-        <img
-          onClick={showCard}
-          className="itemCard__image"
-          src={item.link}
-          alt={item.name}
-        />
-      </li>
-    </>
+    <li className="itemCard">
+      <h1 className="itemCard__name">{item.name}</h1>
+      <img
+        onClick={showCard}
+        className="itemCard__image"
+        src={item.link}
+        alt={item.name}
+      />
+    </li>
   );
 }

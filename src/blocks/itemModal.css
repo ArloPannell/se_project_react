@@ -2,7 +2,7 @@
   width: 100%;
 }
 
-.modal_type_previewGarmet {
+.modal__type_previewGarment {
   max-width: 498px;
   flex-direction: column;
   padding: 0;
