@@ -7,19 +7,17 @@ import {
   useAPI,
   parseWeatherData,
   formatWeatherData,
-  getUniqueId,
 } from "../utils/functions.js";
 import { getItems, postItem, deleteItem } from "../utils/api.js";
 import {
   defaultClothingItems as itemDefaults,
   weatherDefaults,
 } from "../utils/constants.js";
-import TempTypeContext from "../contexts/CurrentTemperatureUnitContext.jsx";
+import CurrentTemperatureUnitContext from "../contexts/CurrentTemperatureUnitContext.jsx";
 import Header from "./Header";
 import Main from "./Main";
 import Profile from "./Profile";
 import Footer from "./Footer";
-import ModalWithForm from "./ModalWithForm";
 import AddItemModal from "./AddItemModal.jsx";
 import ItemModal from "./ItemModal";
 import DeleteItemWarning from "./DeleteItemWarning";
@@ -75,15 +73,13 @@ function App() {
   };
 
   const addGarment = (formData) => {
-    const newID = getUniqueId();
-    const garmentData = { _id: getUniqueId(), ...formData };
-    postItem(garmentData)
+    postItem(formData)
       .then((garmentData) => {
         setClothingItems([garmentData, ...clothingItems]);
         closeActiveModal();
       })
       .catch((res) => {
-        console.error(console.error("Failed to post new garment: ", res.error));
+        console.error("Failed to post new garment: ", res.error);
       });
   };
 
@@ -98,12 +94,12 @@ function App() {
         closeActiveModal()
       )
       .catch((res) => {
-        console.error(console.error("Failed to delete garment: ", res.error));
+        console.error("Failed to delete garment: ", res.error);
       });
   };
 
   return (
-    <TempTypeContext.Provider
+    <CurrentTemperatureUnitContext.Provider
       value={{ currentTemperatureUnit, handleToggleSwitchChange }}
     >
       <div className="page">
@@ -163,7 +159,7 @@ function App() {
           />
         )}
       </div>
-    </TempTypeContext.Provider>
+    </CurrentTemperatureUnitContext.Provider>
   );
 }
 

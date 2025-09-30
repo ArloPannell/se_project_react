@@ -1,10 +1,5 @@
 import { wtwImages, weatherIDMap } from "./constants.js";
 import { weatherAPI } from "./weather.js";
-import { v4 as idValue } from "https://jspm.dev/uuid";
-
-function getUniqueId() {
-  return idValue();
-}
 
 function getDate() {
   const dateString = new Date().toLocaleString("default", {
@@ -20,13 +15,13 @@ function getImage(imgName) {
   }).image;
 }
 
-function checkAPI(res) {
+function checkRes(res) {
   return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
 }
 
 function useAPI() {
   const fetchURL = `https://api.openweathermap.org/data/2.5/weather?lat=${weatherAPI.latitude}&lon=${weatherAPI.longitude}&units=imperial&appid=${weatherAPI.apiKey}`;
-  return fetch(fetchURL).then(checkAPI);
+  return fetch(fetchURL).then(checkRes);
 }
 
 function parseWeatherData(weatherData) {
@@ -85,5 +80,5 @@ export {
   formatWeatherData,
   useAPI,
   parseWeatherData,
-  getUniqueId,
+  checkRes,
 };
